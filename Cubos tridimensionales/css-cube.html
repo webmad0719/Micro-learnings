@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Pure CSS 3D cube</title>
+    
+    <style>
+
+      body {
+        background: black;
+      }
+
+      .cube-wrap {
+        position: absolute;
+        top: calc(50% - 150px);
+        left: calc(50% - 150px);
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        animation: rotate3d 30s infinite
+      }
+
+      .layer {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        border: 2px solid white;
+      }
+
+      .layer.face {
+        transform: translateZ(150px);
+        transform-style: preserve-3d;
+      }
+
+      .layer.back {
+        transform: translateZ(-150px);
+        transform-style: preserve-3d;
+      }
+
+      .layer.left {
+        transform: rotateY(-90deg) translateZ(150px);
+        transform-style: preserve-3d;
+      }
+
+      .layer.right {
+        transform: rotateY(90deg) translateZ(150px);
+        transform-style: preserve-3d;
+      }
+
+      .layer.top {
+        transform: rotateX(90deg) translateZ(150px);
+        transform-style: preserve-3d;
+      }
+
+      .layer.bottom {
+        transform: rotateX(-90deg) translateZ(150px);
+        transform-style: preserve-3d;
+      }
+
+      @keyframes rotate3d {
+          from {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+          }
+
+          to {
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+          }
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="cube-wrap">
+        <div class="layer face"></div>
+        <div class="layer back"></div>
+        <div class="layer left"></div>
+        <div class="layer right"></div>
+        <div class="layer top"></div>
+        <div class="layer bottom"></div>
+    </div>
+
+
+    <script type="text/javascript">
+
+      let userDepth;
+
+      window.onscroll = (e) => {
+
+        userDepth = window.scrollY * .2
+        document.querySelector('.cube-wrap').style.transform = `rotateX(${userDepth}deg) rotateY(${userDepth}deg) rotateZ(${userDepth}deg)`
+
+      }
+
+    </script>
+
+  </body>
+</html>
