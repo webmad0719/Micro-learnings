@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		h1 {
+			margin-bottom: 200px
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<h1>Gestión de contenido con jQuery</h1>
+
+	<a href="#" class="boton1 btn btn-primary btn-lg">¿Qué contenido tiene el título?</a>
+	<a href="#" class="boton2 btn btn-primary btn-lg">Vamos a cambiarlo</a>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		// $('selector').text('texto');
+		// var nombreVairable = $('selector').text();
+
+		$(document).ready(function () {
+
+			$('.boton1').on('click', muestraContenido);
+
+			$('.boton2').on('click', cambiaContenido);
+		});
+
+
+		function cambiaContenido() {
+
+			$('h1').text('Cambiado desde el script!');
+		}
+
+
+		function muestraContenido() {
+
+			var textoTitulo = $('h1').text();
+
+			alert(textoTitulo);
+		}
+
+
+	</script>
+
+</body>
+
+</html>

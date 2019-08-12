@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		.card {
+			width: 400px;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		.card-body {
+			padding: 1.25rem;
+		}
+	</style>
+</head>
+
+<body>
+
+	<section>
+
+		<article class="card">
+			<img class="card-img-top" src="http://lorempixel.com/400/200/cats/1/" alt="">
+			<div class="card-body">
+				<h4 class="card-title">Gatos del mundo</h4>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+					card's
+					content.</p>
+			</div>
+		</article>
+
+		<article class="card">
+			<img class="card-img-top" src="http://lorempixel.com/400/200/cats/2/" alt="">
+			<div class="card-body">
+				<h4 class="card-title">Gatos del mundo</h4>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+					card's
+					content.</p>
+			</div>
+		</article>
+
+		<article class="card">
+			<img class="card-img-top" src="http://lorempixel.com/400/200/cats/3/" alt="">
+			<div class="card-body">
+				<h4 class="card-title">Gatos del mundo</h4>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+					card's
+					content.</p>
+			</div>
+		</article>
+
+	</section>
+
+	<a href="#" id="boton1" class="btn btn-primary btn-lg">Hazme click</a>
+	<a href="#" id="boton2" class="btn btn-primary btn-lg">También a mi</a>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		// $('selector').on('evento', funcion);
+
+
+		$(document).ready(function () {
+
+			$('#boton1').on('click', saluda);
+
+			$('#boton2').on('click', despide);
+
+			$('.card').on('mouseenter', colorea);
+
+		});
+
+
+
+
+		function saluda() {
+
+			alert("¡Hola!");
+		}
+
+
+		function despide() {
+
+			alert("¡Bye!");
+		}
+
+
+		function colorea() {
+
+			// $('.card').css('background', '#ccc');
+			// alcanza a todos
+
+
+			$(this).css('background', '#ccc');
+		}
+
+
+	</script>
+
+</body>
+
+</html>

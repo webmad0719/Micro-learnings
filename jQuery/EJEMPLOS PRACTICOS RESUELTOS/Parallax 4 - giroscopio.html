@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<meta name="viewport" content="width=device-width">
+		<style>.ball {background: red;width: 100px;height: 100px;border-radius: 50%;position: absolute;left: calc(50% - 50px);top: calc(50% - 50px);}.resultados {position: fixed;bottom: 20px;left: 20px;line-height: 16px}</style>
+	</head>
+
+	<body>	
+        
+		<div class="ball"></div>
+
+		<div class="resultados">
+			<p>Alpha: <span id="alpha">0</span></p>
+			<p>Beta: <span id="beta">0</span></p>
+			<p>Gamma: <span id="gamma">0</span></p>
+		</div>
+
+	    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			// https://cosasdigitales.com/documentacion/orientacion
+
+			window.ondeviceorientation = parallax;
+
+			function parallax(e) {
+
+				$('#alpha').text(e.alpha);
+				$('#beta').text(e.beta);
+				$('#gamma').text(e.gamma);
+
+			    $('.ball').css('transform', 'translate(' + - e.gamma * 2 + 'px, ' + - e.beta * 2 + 'px)')
+			}
+
+	</script>
+
+	</body>
+</html>

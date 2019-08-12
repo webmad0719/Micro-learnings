@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		h1 {
+			margin-bottom: 200px
+		}
+
+		.caja {
+			background: darksalmon;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			border: 1px solid;
+			margin: 0 10px 50px;
+			float: left;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Efectos personalizados en jQuery</h1>
+
+	<div class="caja">Click para hundir</div>
+	<div class="caja">Click para hundir</div>
+	<div class="caja">Click para hundir</div>
+	<div class="caja">Click para hundir</div>
+	<div class="caja">Click para hundir</div>
+	<div class="caja">Click para hundir</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		/* 
+
+		$('selector').animate({
+			'propiedad1': 'valor1',
+			'propiedad2': 'valor2'
+		}, timing);
+
+		*/
+
+		$(document).ready(function () {
+
+			$('.caja').on('click', hundir);
+
+		});
+
+
+		function hundir() {
+
+			$(this).animate({
+				marginTop: '200px',
+				opacity: 0
+			}, 2000);
+		};
+
+	</script>
+
+</body>
+
+</html>

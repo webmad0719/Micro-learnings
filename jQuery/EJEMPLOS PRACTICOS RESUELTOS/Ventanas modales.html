@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+			height: 9000px;
+		}
+
+		h1 {
+			margin: 100px 0;
+		}
+
+		.pull-right {
+			float: right;
+		}
+
+		.fondoModal {
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, .85);
+			display: none;
+		}
+
+		.contenidoModal {
+			background-color: white;
+			border-radius: 15px;
+			padding: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: url('src/bg-app.jpg') no-repeat center / cover;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<body>
+
+		<h1>Ventanas modales</h1>
+
+		<a href="#" class="botonModal btn btn-primary btn-lg" data-numero="uno">Mostrar una ventana modal</a>
+
+		<a href="#" class="botonModal btn btn-primary btn-lg" data-numero="dos">Mostrar otra ventana modal</a>
+
+
+		<div class="fondoModal">
+
+			<div class="contenidoModal col-6" data-contenido="uno">
+
+				<button class="btn btn-secondary pull-right cerrarModal">Cerrar</button>
+
+				<h2 class="text-uppercase">Soy una modal</h2>
+				<h5>Puedo mostrar contenido adicional</h5>
+				<hr>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+					laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+					ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+					dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+					facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+					delenit augue duis dolore te feugait nulla facilisi.</p>
+				<p>Lorem ipsum dolor site molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
+					et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
+					feugait nulla facilisi.</p>
+			</div>
+
+
+			<div class="contenidoModal col-6" data-contenido="dos">
+
+				<h2 class="text-uppercase">Yo soy otra modal</h2>
+				<h5>Y tengo otro contenido diferente</h5>
+				<hr>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+					laoreet dolore magna aliquam erat volutpat.</p>
+				<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+					aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+					esse molestie consequat.</p>
+				<button class="btn btn-secondary pull-right cerrarModal">Cerrar</button>
+
+			</div>
+
+		</div>
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			/*
+				- Detectar un click en los botones
+				- Almacenar valor del data-numero de ESE botón
+				- Localizar la ventana modal con el mismo valor en data-modal
+				- Mostrar fondo y mostrar modal
+			*/
+
+
+
+
+			$(document).on('keydown', comprobarTecla);
+
+			$(document).ready(function () {
+
+				$('.botonModal').on('click', mostrarModal);
+				$('.cerrarModal').on('click', ocultarModal);
+			});
+
+			function mostrarModal() {
+
+				let numero = $(this).data('numero');
+
+				$('.fondoModal').fadeIn(500, function () {
+					$('.contenidoModal[data-contenido="' + numero + '"]').fadeIn(500);
+				});
+			}
+
+			function ocultarModal() {
+
+				$('.fondoModal, .contenidoModal').fadeOut(200);
+			}
+
+			function comprobarTecla(e) {
+
+				if (e.keyCode == 27) {
+
+					ocultarModal();
+				}
+			}
+
+
+		</script>
+
+	</body>
+
+</html>

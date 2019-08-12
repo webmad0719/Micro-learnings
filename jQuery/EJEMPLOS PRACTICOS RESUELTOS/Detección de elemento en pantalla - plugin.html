@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+			height: 2500px;
+		}
+
+		h1 {
+			margin: 200px 0;
+		}
+
+		h3 {
+			font-size: 5em;
+			opacity: 0;
+			text-align: center;
+			margin: 1500px 200px;
+			transition: all 1s;
+		}
+
+		h3:nth-of-type(2) {
+			margin: 500px 0;
+		}
+
+		h3.visible {
+			opacity: 1
+		}
+	</style>
+</head>
+
+<body>
+
+	<body>
+
+		<h1>Detección de elemento en viewport</h1>
+		<h3 class="reveal">Este elemento está ahora en el centro de la pantalla</h3>
+		<h3 class="reveal">Ahora, también este</h3>
+		<h3 class="reveal">Y de nuevo encontramos un elemento en pantalla</h3>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			let scrollActual, profundidad;
+
+			$(window).on('scroll', () => {
+
+				scrollActual = $(window).scrollTop();
+
+				$('.reveal').each(function () {
+
+					profundidad = $(this).offset().top - $(window).innerHeight() / 2;
+
+					if (scrollActual >= profundidad) {
+
+						$(this).addClass('visible');
+					}
+
+				});
+
+			})
+
+		</script>
+
+	</body>
+
+</html>

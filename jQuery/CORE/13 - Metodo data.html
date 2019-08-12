@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;}h1{margin-bottom:100px} .caja{background:darksalmon;width:400px;height:200px;line-height:200px;text-align:center;border:1px solid;margin:0 10px 50px;float: left;}</style>
+	</head>
+	<body>	
+
+	<h1>Consultar atributos data-</h1>
+
+	<div class="caja caja1" data-color="red">Click para consultar data-color</div>
+	<div class="caja caja2" data-color="blue">Click para aplicar fondo mediante data-color</div>
+
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+
+		/* 
+
+		var valorData = $('selector').data('nombreData');
+
+		*/
+
+		$(document).ready(function(){		
+
+			$('.caja1').on('click', consultarDataColor);
+
+			$('.caja2').on('click', cambiarFondo);
+
+		});
+
+
+
+		function consultarDataColor(){
+			
+			var valorData = $(this).data('color');
+
+			alert("El selector tiene un valor " + valorData + " en su atributo data-color");
+		}
+
+
+
+		function cambiarFondo(){
+
+			var valorData = $(this).data('color');
+
+			$(this).css('background', valorData);
+
+		}
+
+
+
+
+	</script>
+
+	</body>
+</html>

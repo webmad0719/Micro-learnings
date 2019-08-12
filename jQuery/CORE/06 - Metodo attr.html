@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		h1 {
+			margin-bottom: 200px
+		}
+
+		#principal {
+			font-size: 4em
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Gestión de atributos con jQuery</h1>
+
+	<a href="#" class="boton1 btn btn-primary btn-lg">Insertar atributo "title"</a>
+	<a href="#" class="boton2 btn btn-primary btn-lg">Insertar atributo "id"</a>
+	<a href="#" class="boton3 btn btn-primary btn-lg">Insertar ámbos atributos a la vez</a>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		/* 
+
+		$('selector').attr('nombreAtributo', 'valorAtributo');
+
+		$('selector').attr({
+				'nombreAtributo1': 'valorAtributo1',
+				'nombreAtributo2': 'valorAtributo2'
+		});
+
+		*/
+
+
+		$(document).ready(function () {
+
+			$('.boton1').on('click', insertarTitle);
+			$('.boton2').on('click', insertarID);
+
+			$('.boton3').on('click', insertarVarios);
+		});
+
+
+		function insertarTitle() {
+
+			$('h1').attr('title', 'Soy un título');
+		}
+
+
+
+		function insertarID() {
+
+			$('h1').attr('id', 'principal');
+		}
+
+
+
+		function insertarVarios() {
+
+			$('h1').attr({
+				id: 'principal',
+				title: 'soy un título'
+			});
+
+		}
+
+
+	</script>
+
+</body>
+
+</html>

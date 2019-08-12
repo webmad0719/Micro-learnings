@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;}h1{margin-bottom:200px} .rojo{color:red} </style>
+	</head>
+	<body>	
+
+
+	<h1>Gestión de clases con jQuery</h1>
+
+	<a href="#" class="boton1 btn btn-primary btn-lg">Poner clase ".rojo"</a>
+	<a href="#" class="boton2 btn btn-primary btn-lg">Quitar clase ".rojo"</a>
+	<a href="#" class="boton3 btn btn-primary btn-lg">Cambiar clase ".rojo"</a>
+
+
+
+
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		// $('selector').addClass('nombreClase');
+		// $('selector').removeClass('nombreClase');
+		// $('selector').toggleClass('nombreClase');
+
+		$(document).ready(function(){
+
+			$('.boton1').on('click', insertarClase);			
+
+			$('.boton2').on('click', borrarClase);
+
+			$('.boton3').on('click', cambiarClase);
+		});
+
+
+		function insertarClase() {
+
+			$('h1').addClass('rojo');
+		}
+
+
+
+		function borrarClase() {
+
+			$('h1').removeClass('rojo');
+		}
+
+
+
+		function cambiarClase() {
+
+			$('h1').toggleClass('rojo');
+		}
+		
+		
+	</script>
+
+	</body>
+</html>

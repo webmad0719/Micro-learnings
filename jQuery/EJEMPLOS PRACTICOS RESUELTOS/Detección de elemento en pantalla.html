@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;height:2500px;}h1{margin:200px 0;}h3{text-align:center;margin:1500px 0;transition: all 1s;opacity:0;}h3.visible{opacity:1}</style>
+	</head>
+	<body>	
+	<body>	
+
+    	<h1>Detección de elemento en viewport</h1>
+    	<h3 id="objetivo">Este elemento está ahora en el centro de la pantalla</h3>
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+			/*
+				PASOS:
+
+					- Detectar cuando el usuario hace scroll
+					- Conocer a tiempo real el scroll realizado por el usuario
+					- Conocer la profundidad objetivo
+			*/
+
+
+			$(window).on('scroll', reveal);
+
+			let scrollActual, profundidad;
+
+
+
+
+			function reveal(){
+
+				scrollActual = $(window).scrollTop();
+				profundidad = $('#objetivo').offset().top - $(window).innerHeight() / 2;
+
+
+				if (scrollActual >= profundidad) {
+
+					$('#objetivo').addClass('visible');
+				}
+			}
+		
+	</script>
+
+	</body>
+</html>

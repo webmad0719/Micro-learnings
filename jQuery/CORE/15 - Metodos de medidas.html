@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;}h1{margin-bottom:200px} .caja{background:darksalmon;padding: 120px;border:1px solid;margin:0 10px 50px; text-align:center; width:calc(10% + 500px);}</style>
+	</head>
+	<body>	
+
+		<div class="caja">Caja</div>
+
+		<a href="#" class="boton1 btn btn-primary btn-lg">¿Qué medidas tiene la pantalla?</a>	        
+		<a href="#" class="boton2 btn btn-primary btn-lg">¿Qué medidas tiene la caja?</a>	        
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		/*
+
+		$('selector').innerWidth();
+		$('selector').innerHeight();
+
+		*/
+
+		$(document).ready(function(){
+
+			$('.boton1').on('click', medidasWindow);
+			$('.boton2').on('click', medidasCaja);
+
+		});
+
+
+
+		function medidasWindow() {
+			var alto = $(window).innerHeight();
+			var ancho = $(window).innerWidth();
+			
+			var texto = "El alto de la ventana es de " + alto + " px, y el ancho es de " + ancho + " px.";
+
+			alert(texto);
+		}
+
+
+
+		function medidasCaja() {
+			var alto = $('.caja').innerHeight();
+			var ancho = $('.caja').innerWidth();
+			
+			var texto = "El alto de la caja es de " + alto + " px, y el ancho es de " + ancho + " px.";
+
+			alert(texto);
+		}
+
+	</script>
+
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		h1 {
+			margin-bottom: 200px
+		}
+
+		.caja {
+			transition: all 1s;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			border: 1px solid;
+			margin-bottom: 50px
+		}
+	</style>
+</head>
+
+<body>
+
+	<body>
+
+
+		<h1>Gestión de estilos con jQuery</h1>
+
+		<div class="caja">Caja</div>
+
+		<a href="#" class="boton1 btn btn-primary btn-lg">Aumentar tamaño de caja</a>
+		<a href="#" class="boton2 btn btn-primary btn-lg">Cambiar su color de fondo</a>
+		<a href="#" class="boton3 btn btn-primary btn-lg">Hacer varios cambios a la vez</a>
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			/* 
+	
+			$('selector').css('propiedad', 'valor');
+	
+			$('selector').css({
+					'propiedad1': 'valor1',
+					'propiedad2': 'valor2'
+			});
+	
+			*/
+
+
+			$(document).ready(function () {
+
+				$('.boton1').on('click', aumentarAncho);
+
+				$('.boton2').on('click', cambiarFondo);
+
+				$('.boton3').on('click', hacerPelota);
+			});
+
+
+			function aumentarAncho() {
+
+				$('.caja').css('width', '400px');
+			}
+
+
+
+			function cambiarFondo() {
+
+				$('.caja').css('background', 'darksalmon');
+			}
+
+
+
+			function hacerPelota() {
+
+				$('.caja').css({
+					'border-radius': '50%',
+					'background': 'darksalmon'
+				});
+			}
+
+
+		</script>
+
+	</body>
+
+</html>

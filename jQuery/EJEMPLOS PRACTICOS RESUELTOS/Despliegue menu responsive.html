@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		h1 {
+			margin: 100px 0;
+			text-align: center;
+		}
+
+		span {
+			position: fixed;
+			right: 40px;
+			top: 20px;
+			font-size: 4em;
+			cursor: pointer;
+		}
+
+		.menu {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 300px;
+			background: #ddd;
+			text-align: center;
+			padding-top: 200px;
+			transition: all 1s;
+			transform: translate(-100%);
+		}
+
+		.menu.abierto {
+			transform: translate(0);
+		}
+	</style>
+</head>
+
+<body>
+
+	<body>
+
+		<nav class="menu">MENU</nav>
+
+		<span>&equiv;</span>
+
+		<h1>Despliegue menu responsive</h1>
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+
+				$('span').on('click', muestraMenu);
+
+			});
+
+
+			function muestraMenu() {
+
+				$('.menu').toggleClass('abierto');
+			}
+
+		</script>
+
+	</body>
+
+</html>

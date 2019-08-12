@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;}h1{margin-bottom:100px} .boton1{margin-bottom:2500px}</style>
+	</head>
+	<body>	
+
+
+	<h1>Gestionar scroll en la ventana</h1>
+
+	<button class="boton1 btn btn-primary btn-lg">Posicionar el scroll a 1000 píxeles</button>
+	<button href="#" class="boton2 btn btn-primary btn-lg">¿Cuánto scroll hay ahora?</button>
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+
+		/* 
+
+		$(window).scrollTop(pixeles);
+
+		var nombreVariable = $(window).scrollTop();
+
+		*/
+
+		$(document).ready(function(){		
+
+			$('.boton1').on('click', manipularScroll);
+
+			$('.boton2').on('click', consultarScroll);
+
+		});
+
+
+
+		function manipularScroll(){
+
+			$(window).scrollTop(1000);
+		}
+
+
+
+		function consultarScroll(){
+
+			var scroll = $(window).scrollTop();
+
+			alert("El usuario ha descendido un total de " + scroll + " píxeles");
+		}
+
+
+
+
+	</script>
+
+	</body>
+</html>

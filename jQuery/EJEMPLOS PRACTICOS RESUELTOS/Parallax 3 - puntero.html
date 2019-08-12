@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>.montahna,.nubes1,.nubes2{position:absolute;bottom:0}body{overflow:hidden}.fondo{background:url(src/montahnas2.jpg) center/cover no-repeat;width:120%;height:120vh;margin:-10% 0 0 -10%}.montahna{background:url(src/montahna.png) bottom/contain no-repeat;width:50%;height:100vh;left:25%}.nubes1{background:url(src/nubes.png) bottom/cover no-repeat;width:120%;height:120vh;margin:-10% 0}.nubes2{background:url(src/nubes2.png) bottom/cover no-repeat;width:110%;height:50vh;margin-left:-10%;opacity:.6}	</style>
+	</head>
+
+	<body>	
+        
+		<div class="parallax fondo" data-transferencia="0.025"></div>
+		<div class="parallax nubes1" data-transferencia="-0.095"></div>
+		<div class="parallax montahna" data-transferencia="-0.015"></div>
+		<dir class="parallax nubes2" data-transferencia="-0.055"></dir>
+
+	    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			$(document).on('mousemove', mouseParallax);
+
+			let transfer;
+			
+
+			function mouseParallax(e) {
+
+				$('.parallax').each(function(){
+
+					transfer = $(this).data('transferencia');
+
+					$(this).css('transform', 'translate('+ e.pageX * transfer +'px, '+ e.pageY * transfer + 'px)');
+
+				});
+			}
+
+		</script>
+
+	</body>
+</html>

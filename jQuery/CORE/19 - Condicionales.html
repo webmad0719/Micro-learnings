@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px}h1{margin-bottom:20px} .caja{background:darksalmon;width:300px;display:inline-block;height:120px;line-height:120px;border:1px solid;margin:100px 10px; text-align:center;}</style>
+	</head>
+
+	<body>	
+
+	<h1>Condicionales en jQuery</h1>
+
+	<p>Al hacer click sobre cualquier caja, el texto inferior mostrará si su valor es 150 o mayor, y si su nombre es "Sara" saldrá una alerta.</p>
+
+	<div class="caja caja1" data-valor="100" data-nombre="Sara">Caja 1 (valor 100)</div>
+	<div class="caja caja2" data-valor="150" data-nombre="Inés">Caja 2 (valor 150)</div>
+	<div class="caja caja3" data-valor="90" data-nombre="Laura">Caja 3 (valor 90)</div>
+
+	<h3>Esperando resultados...</h3>
+
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$('.caja').on('click', comprobarValor);
+		});
+
+		function comprobarValor(){
+
+			var valor = $(this).data('valor');
+
+			if (valor == 90) {
+
+				$('h3').text("Su cantidad es 90");
+
+			}
+
+		}
+
+	</script>
+
+	</body>
+</html>

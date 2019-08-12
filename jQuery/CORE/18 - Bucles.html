@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px}h1{margin-bottom:20px} .caja{background:darksalmon;width:300px;display:inline-block;height:120px;line-height:120px;border:1px solid;margin:100px 10px; text-align:center;}</style>
+	</head>
+
+	<body>	
+		<h1>Bucles</h1>
+
+		<div class="caja" data-color="red">Caja 1</div>
+		<div class="caja" data-color="green">Caja 2</div>
+		<div class="caja" data-color="blue">Caja 3</div>
+
+		<a href="#" class="boton btn btn-primary btn-lg">Modificar color cajas</a>	        
+
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		// $('selector').each(funcion);
+
+		$(document).ready(function(){
+
+			$('.boton').on('click', modificarCaja);
+
+		});
+
+
+		function modificarCaja(){
+			
+			$('.caja').each(function(){
+
+				var colorFondo = $(this).data('color');
+
+				$(this).css('background-color', colorFondo);
+			});
+		}
+
+	</script>
+
+	</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		h1 {
+			margin-bottom: 200px
+		}
+
+		.caja {
+			background: darksalmon;
+			width: 600px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			border: 1px solid;
+			margin-bottom: 50px
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Efectos predefinidos en jQuery</h1>
+
+	<div class="caja caja1">Click para fundir</div>
+	<div class="caja caja2">Click para reducir opacidad</div>
+	<div class="caja caja3">Click para replegar</div>
+	<div class="caja caja4">Click para esconder</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		/* 
+
+		$('selector').fadeIn(timing);
+		$('selector').fadeOut(timing);
+		$('selector').fadeTo(timing, opacidad);
+		$('selector').slideUp(timing);
+		$('selector').slideDown(timing);
+		$('selector').hide();
+
+		*/
+
+
+		$(document).ready(function () {
+
+			$('.caja1').on('click', fundir);
+
+			$('.caja2').on('click', reducirOpacidad);
+
+			$('.caja3').on('click', replegar);
+
+			$('.caja4').on('click', esconder);
+		});
+
+
+		function fundir() {
+
+			$(this).fadeOut(2000);
+		}
+
+
+
+		function reducirOpacidad() {
+
+			$(this).fadeTo(2000, .5);
+		}
+
+
+
+		function replegar() {
+
+			$(this).slideUp(1000);
+		}
+
+
+
+		function esconder() {
+
+			$(this).hide();
+
+		}
+
+
+	</script>
+
+</body>
+
+</html>

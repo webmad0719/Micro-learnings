@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>h1{margin-bottom:200px} .caja{background:darksalmon;width:500px;display:inline-block;height:120px;line-height:120px;border:1px solid;margin:10px; text-align:center;}</style>
+	</head>
+	<body>	
+
+	<section>
+
+		  <h1>Métodos de refinamiento para selectores</h1>
+
+	      <div class="caja">Caja 1</div>
+	      <div class="caja">Caja 2</div>
+	      <div class="caja">Caja 3</div>
+	      <div class="caja">Caja 4</div>
+	      <div class="caja">Caja 5</div>
+	      <div class="caja">Caja 6</div>
+	      <div class="caja especial">Caja 7</div>
+	      <div class="caja">Caja 8</div>
+	      <div class="caja">Caja 9</div>
+	      <div class="caja">Caja 10</div>
+
+	</section>
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		/*
+
+		$('selector').eq(indice);
+		$('selector').not('selector');
+		$('selector').find('selector');
+		$('selector').parent();
+		$('selector').prev();
+		$('selector').next();
+
+		*/
+
+		$(document).ready(function(){
+
+			$('.caja').eq(2).text('Soy la tercera caja');
+
+			$('.caja').not('.especial').css('border-color', 'red');
+
+			$('section').find('.especial').text('Soy el elemento de clase ESPECIAL dentro de la section');
+
+			$('section .especial').parent().css('background', 'blue');
+
+			$('.caja').eq(9).prev().text('Soy la anterior a la décima caja');
+
+		});
+
+
+	</script>
+
+	</body>
+</html>

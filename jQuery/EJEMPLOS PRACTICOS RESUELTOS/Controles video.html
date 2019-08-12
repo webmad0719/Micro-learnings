@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;}h1{margin:20px 0;}#video{display: block;margin:50px auto;}section{text-align:center}button{padding: 15px 20px;margin: 0 10px;}
+		</style>
+	</head>
+	<body>	
+	<body>	
+
+    	<h1>Controles de vídeo</h1>
+
+    	<video id="video" poster="src/bg-app.jpg">
+			<source type="video/webm" src="src/Chrome_ImF.webm"></source>
+			<source type="video/ogg" src="src/Chrome_ImF.ogv"></source>
+			<source type="video/mp4" src="src/Chrome_ImF.mp4"></source>
+			<p>¡Ops! Tu navegador no soporta vídeo nativo HTML5</p>
+		</video>
+
+		<section>
+			<button>Reproducir</button>
+			<button>Pausar</button>
+			<button>Detener</button>
+			<button>Reiniciar</button>
+			<button>Avanzar 10''</button>
+			<button>Retoceder 10''</button>
+			<button>Silenciar</button>
+		</section>
+	 				
+
+    	
+
+		<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				$('button').eq(0).on('click', reproducir);
+				$('button').eq(1).on('click', pausar);
+				$('button').eq(2).on('click', detener);
+				$('button').eq(3).on('click', reiniciar);
+				$('button').eq(4).on('click', avanzar);
+				$('button').eq(5).on('click', retroceder);
+				$('button').eq(6).on('click', silenciar);
+
+			});
+
+			function reproducir(){
+				
+				$('#video').get(0).play();
+			}
+
+			function pausar(){
+				
+				$('#video').get(0).pause();
+			}
+
+			function detener(){
+				
+				$('#video').get(0).load();
+			}
+
+			function reiniciar(){
+				
+				$('#video').get(0).currentTime = 0;
+			}
+
+			function avanzar(){
+				
+				//$('#video').get(0).currentTime = $('#video').get(0).currentTime + 10;
+
+				$('#video').get(0).currentTime += 10;
+			}
+
+
+			function retroceder(){
+			
+				$('#video').get(0).currentTime -= 10;
+			}
+
+
+			function silenciar(){
+			
+				$('#video').get(0).volume = 0;
+			}
+
+
+		</script>
+
+	</body>
+</html> 

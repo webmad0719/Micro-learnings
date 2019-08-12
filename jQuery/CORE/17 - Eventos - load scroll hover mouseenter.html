@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;}h1{margin-bottom:20px} .caja{background:darksalmon;border:1px solid;margin:0 10px 50px; text-align:center; width:300px; height: 200px;}</style>
+	</head>
+	<body>	
+
+	<h1>Eventos en jQuery</h1>
+	
+	<ul>
+		<li>
+			Al hacer scroll en la ventana, el texto inferior cambiará de "DETENIDO" a "MOVIMIENTO":
+			<h3>DETENIDO</h3>
+		</li>
+		<li>Cuando la ventana esté completamente cargada, se mostrará una alerta con el texto "Cargada"</li>
+		<li>
+			Al entrar con el ratón en esta caja, su fondo cambiará a azul:<br><br>
+			<div class="caja caja1">¡Pasa por encima!</div>
+		</li>
+		<li>
+			Al entrar con el ratón en esta caja, su fondo cambiará a azul (y al salir volverá al color original):<br><br>
+			<div class="caja caja2">¡Pasa por encima!</div>
+		</li>
+	</ul>
+
+
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		/*
+
+		$(window).on('load', funcion);
+		$(window).on('scroll', funcion);
+		$('selector').on('mouseenter', funcion);
+		$('selector').hover(funcionEntrada, funcionSalida);
+
+		*/
+
+		$(window).on('load', inicializar);
+		$(window).on('scroll', detectarScroll);
+
+		$(document).ready(function(){
+			 
+			 $('.caja1').on('mouseenter', cambiarFondo);
+
+			 $('.caja2').hover(aumentar, reducir);
+
+		});
+
+
+
+
+		 function inicializar(){
+		    alert("Página completamente cargada");
+		 }
+
+
+		 function detectarScroll(){
+		 	$('h3').text('MOVIMIENTO');
+		 }
+
+
+		 function cambiarFondo(){
+		    $(this).css('background', 'blue');
+		 }
+
+
+		 function aumentar(){
+		    $(this).css('width', '600px');
+		 }
+
+
+		 function reducir(){
+		    $(this).css('width', '250px');
+		 }
+
+	</script>
+
+	</body>
+</html>

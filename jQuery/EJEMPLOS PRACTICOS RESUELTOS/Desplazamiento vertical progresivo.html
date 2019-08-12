@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+			height: 2500px;
+		}
+
+		h1 {
+			margin-bottom: 200px
+		}
+
+		hr {
+			position: absolute;
+			top: 800px;
+			width: 100%;
+			border: 2px dashed black;
+		}
+	</style>
+</head>
+
+<body>
+
+	<body>
+
+		<h1>Desplazamiento vertical progresivo</h1>
+
+		<button href="#" class="boton btn btn-primary btn-lg">Descender 800 píxeles progresivamente</button>
+
+		<hr>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+
+
+
+			$(document).ready(function () {
+
+				$('.boton').on('click', desplazar);
+
+			});
+
+
+			function desplazar() {
+
+				$('html').animate({
+					scrollTop: 800
+				}, 2000);
+			}
+
+
+
+
+
+
+		</script>
+
+	</body>
+
+</html>

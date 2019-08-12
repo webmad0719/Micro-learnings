@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 50px;
+		}
+
+		h1 {
+			margin-bottom: 200px
+		}
+
+		h1 span {
+			color: red
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Gestión de <span>html con jQuery</span></h1>
+
+	<a href="#" class="boton1 btn btn-primary btn-lg">¿Qué html tiene el título?</a>
+	<a href="#" class="boton2 btn btn-primary btn-lg">Vamos a ponerlo todo rojo</a>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+		// $('selector').html('codigo');
+		// var nombreVairable = $('selector').html();
+
+		$(document).ready(function () {
+
+			$('.boton1').on('click', muestraCodigo);
+
+			$('.boton2').on('click', insertaCodigo);
+		});
+
+
+		function muestraCodigo() {
+
+			var codigo = $('h1').html();
+
+			alert(codigo);
+		}
+
+
+		function insertaCodigo() {
+
+			$('h1').html('<span>Gestión de html con jQuery</span>');
+		}
+
+
+
+
+	</script>
+
+</body>
+
+</html>

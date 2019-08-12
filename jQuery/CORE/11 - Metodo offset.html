@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+	<head> 		
+		<meta charset="UTF-8"/>
+		<title>jQuery</title>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<style>body{padding:50px;}h1{margin-bottom:200px} .caja{background:darksalmon;width:200px;height:200px;line-height:200px;text-align:center;border:1px solid;margin-top:50px;}.caja2{margin-top:200%}</style>
+	</head>
+	<body>	
+
+
+	<h1>Obtener profundidad elemento</h1>
+
+	<a href="#" class="boton1 btn btn-primary btn-lg">¿A qué profundidad está la caja 1?</a>
+	<a href="#" class="boton2 btn btn-primary btn-lg">¿Y la dos?</a>
+
+	<div class="caja caja1">Caja 1</div>			
+	<div class="caja caja2">Caja 2</div>
+
+
+
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+
+		/* 
+
+		$('selector').offset().top;
+
+		*/
+
+		$(document).ready(function(){		
+
+			$('.boton1').on('click', profundidad1);
+
+			$('.boton2').on('click', profundidad2);
+
+		});
+
+
+
+		function profundidad1(){
+
+			var pixeles = $('.caja1').offset().top;
+
+			alert("La caja 1 está a " + pixeles + " píxeles de profundidad");
+		}
+
+
+
+
+		function profundidad2(){
+
+			var pixeles = $('.caja2').offset().top;
+
+			alert("La caja 2 está a " + pixeles + " píxeles de profundidad");
+		}
+
+
+
+
+	</script>
+
+	</body>
+</html>
